@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/exercise-31/">
+    <Project Path="Triangular/Triangular.csproj" />
+  </Folder>
+  <Folder Name="/exercise-34/">
+    <Project Path="Hourglass/Hourglass.csproj" />
+  </Folder>
+</Solution>
