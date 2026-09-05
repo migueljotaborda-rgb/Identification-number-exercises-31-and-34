@@ -5,4 +5,7 @@
   <Folder Name="/exercise-34/">
     <Project Path="Hourglass/Hourglass.csproj" />
   </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/Shared.csproj" Id="6e60daba-3c48-4cab-b777-d40c482d9dbf" />
+  </Folder>
 </Solution>

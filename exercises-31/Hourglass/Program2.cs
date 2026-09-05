@@ -15,51 +15,51 @@ class Program2
             int n = ConsoleExtension.GetInt("Ingrese orden de la matriz: ");
             if (n <= 0 || n % 2 == 0)
             {
-            Console.WriteLine("Por favor, ingrese un número impar válido.");
-            return;
-        }
+                Console.WriteLine("Por favor, ingrese un número impar válido.");
+                return;
+            }
 
-        int[,] matriz = new int[n, n];
+            int[,] matriz = new int[n, n];
 
-        
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            
+            for (int i = 0; i < n; i++)
             {
+                for (int j = 0; j < n; j++)
+                {
                     matriz[i, j] = 2 * i + j;
+                }
             }
-        }
 
-       
+          
             Console.WriteLine("MATRIZ COMPLETA");
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            for (int i = 0; i < n; i++)
             {
+                for (int j = 0; j < n; j++)
+                {
                     Console.Write($"{matriz[i, j],-4}");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
-        }
 
-        
+           
             Console.WriteLine("RELOJ DE ARENA");
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            for (int i = 0; i < n; i++)
             {
+                for (int j = 0; j < n; j++)
+                {
                     bool perteneceReloj = (i <= j && i + j <= n - 1) || (i >= j && i + j >= n - 1);
 
                     if (perteneceReloj)
-                {
+                    {
                         Console.Write($"{matriz[i, j],-4}");
-                }
-                else
-                {
+                    }
+                    else
+                    {
                         Console.Write($"{"",-4}");
+                    }
                 }
+                Console.WriteLine();
             }
-            Console.WriteLine();
-        }
 
             do
             {
