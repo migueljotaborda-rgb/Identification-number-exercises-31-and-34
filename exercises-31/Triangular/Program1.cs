@@ -1,11 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Shared;
 
 class Program1
 {
     static void Main()
     {
-        Console.Write("Ingrese orden de la matriz: ");
-        if (!int.TryParse(Console.ReadLine(), out int n) || n <= 0)
+        var answer = string.Empty;
+        var options = new List<string> { "s", "n" };
+
+        do
+        {
+            int n = ConsoleExtension.GetInt("Ingrese orden de la matriz: ");
+            if (n <= 0)
         {
             Console.WriteLine("Por favor, ingrese un número entero válido mayor a 0.");
             return;
@@ -43,5 +51,13 @@ class Program1
             }
             Console.WriteLine();
         }
+
+            do
+            {
+                answer = ConsoleExtension.GetValidOptions("¿Deseas continuar [S]í, [N]o?: ", options);
+            }
+            while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+
+        } while ("s".Equals(answer, StringComparison.CurrentCultureIgnoreCase));
     }
 }
