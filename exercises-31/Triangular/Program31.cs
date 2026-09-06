@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Shared;
 
-class Program2
+class Program31
 {
     static void Main()
     {
@@ -13,25 +11,24 @@ class Program2
         do
         {
             int n = ConsoleExtension.GetInt("Ingrese orden de la matriz: ");
-            if (n <= 0 || n % 2 == 0)
+            if (n <= 0)
             {
-                Console.WriteLine("Por favor, ingrese un número impar válido.");
+                Console.WriteLine("Por favor, ingrese un número entero válido mayor a 0.");
                 return;
             }
 
             int[,] matriz = new int[n, n];
 
-            
+
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    matriz[i, j] = 2 * i + j;
+                    matriz[i, j] = i + j;
                 }
             }
 
           
-            Console.WriteLine("MATRIZ COMPLETA");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
@@ -41,22 +38,14 @@ class Program2
                 Console.WriteLine();
             }
 
-           
-            Console.WriteLine("RELOJ DE ARENA");
+            Console.WriteLine();
+
+            
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j <= i; j++)
                 {
-                    bool perteneceReloj = (i <= j && i + j <= n - 1) || (i >= j && i + j >= n - 1);
-
-                    if (perteneceReloj)
-                    {
-                        Console.Write($"{matriz[i, j],-4}");
-                    }
-                    else
-                    {
-                        Console.Write($"{"",-4}");
-                    }
+                    Console.Write($"{matriz[i, j],-4}");
                 }
                 Console.WriteLine();
             }
